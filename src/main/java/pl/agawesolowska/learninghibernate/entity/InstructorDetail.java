@@ -10,10 +10,18 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entity class representing instructors' details table in the PostgreSQL database.
+ * 
+ * @author Aga
+ *
+ */
 @Entity
 @Table(name="instructor_detail")
+@NoArgsConstructor
 @Getter @Setter
 public class InstructorDetail {
 
@@ -31,10 +39,6 @@ public class InstructorDetail {
 	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL)
 	private Instructor instructor;
 
-	public InstructorDetail() {
-		
-	}
-	
 	public InstructorDetail(String webPage, String hobby) {
 		this.webPage = webPage;
 		this.hobby = hobby;

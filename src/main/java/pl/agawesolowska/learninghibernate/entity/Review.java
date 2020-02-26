@@ -8,10 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entity class representing review table in the PostgreSQL database.
+ * 
+ * @author Aga
+ *
+ */
 @Entity
 @Table(name="review")
+@NoArgsConstructor
 @Getter @Setter
 public class Review {
 
@@ -22,10 +30,6 @@ public class Review {
 	
 	@Column(name="comment")
 	private String comment;
-
-	public Review() {
-		
-	}
 
 	public Review(String comment) {
 		this.comment = comment;

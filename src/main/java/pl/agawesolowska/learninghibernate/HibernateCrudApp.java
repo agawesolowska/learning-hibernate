@@ -12,6 +12,12 @@ import pl.agawesolowska.learninghibernate.entity.InstructorDetail;
 import pl.agawesolowska.learninghibernate.entity.Review;
 import pl.agawesolowska.learninghibernate.entity.Student;
 
+/**
+ * Simple student tracker app using the ORM framework and implementing CRUD features.
+ * 
+ * @author Aga
+ *
+ */
 public class HibernateCrudApp {
 
 	public static void main(String[] args) {
@@ -58,7 +64,7 @@ public class HibernateCrudApp {
 			// read object
 			session = factory.getCurrentSession();
 			session.beginTransaction();
-			List<Course> listOfCourses = session.createQuery("from Course").getResultList();
+			List<Course> listOfCourses = session.createQuery("from Course", Course.class).getResultList();
 			for(Course course : listOfCourses) {
 				System.out.println(course);				
 			}

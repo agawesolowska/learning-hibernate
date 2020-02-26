@@ -6,6 +6,8 @@
 	<groupId>pl.agawesolowska.learninghibernate</groupId>
 	<artifactId>GitHub-learning-hibernate</artifactId>
 	<version>1.0</version>
+	<name>GitHub-learning-hibernate</name>
+	<description>Simple student tracker app to learn Hibernate</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

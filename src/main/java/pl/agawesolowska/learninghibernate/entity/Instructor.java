@@ -15,10 +15,18 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entity class representing the instructor table in the PostgreSQL database.
+ * 
+ * @author Aga
+ *
+ */
 @Entity
 @Table(name="instructor")
+@NoArgsConstructor
 @Getter @Setter
 public class Instructor {
 
@@ -42,10 +50,6 @@ public class Instructor {
 	
 	@OneToMany(mappedBy="instructor")
 	private List<Course> courses;
-	
-	public Instructor() {
-		
-	}
 	
 	public Instructor(String firstName, String lastName, String email) {
 		this.firstName = firstName;

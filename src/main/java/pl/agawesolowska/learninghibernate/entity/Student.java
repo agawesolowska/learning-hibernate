@@ -13,10 +13,18 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entity class representing the student table in the PostgreSQL database.
+ * 
+ * @author Aga
+ *
+ */
 @Entity
 @Table(name="student")
+@NoArgsConstructor
 @Getter @Setter
 public class Student {
 	
@@ -38,10 +46,6 @@ public class Student {
 	@JoinTable(name="course_student", joinColumns=@JoinColumn(name="student_id"), inverseJoinColumns=@JoinColumn(name="course_id"))
 	private List<Course> courses;
 	
-	public Student() {
-		
-	}
-
 	public Student(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
